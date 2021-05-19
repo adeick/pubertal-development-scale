@@ -16,7 +16,6 @@ import {
   Tab, Tabs, TabList, TabPanel, TabPanels,
   Slider, SliderTrack, SliderFilledTrack, SliderThumb,
 } from '@chakra-ui/react';
-import { Field, Form, Formik } from 'formik';
 
 
 const Home = () => {
@@ -27,30 +26,14 @@ const Home = () => {
   const [petd, setPetd] = React.useState("0");
   const [mpete, setMpete] = React.useState("0");
   const [fpete, setFpete] = React.useState("0");
-  // // Intermediate Values
-  // const [petam, setPetam] = React.useState("0");
-  // const [petbm, setPetbm] = React.useState("0");
-  // const [petcm, setPetcm] = React.useState("0");
-  // const [petdm, setPetdm] = React.useState("0");
-  // const [adrenm, setAdrenm] = React.useState("0");
-  // const [adrenm2, adrenm2 = ] = React.useState("0");
-  // const [gonadm, setGonadm] = React.useState("0");
-  // const [gonadm2, gonadm2 = ] = React.useState("0");
 
-  const [petaf, setPetaf] = React.useState("0");
-  const [petbf, setPetbf] = React.useState("0");
-  const [petcf, setPetcf] = React.useState("0");
-  const [petdf, setPetdf] = React.useState("0");
-  const [adrenf, setAdrenf] = React.useState("0");
-  const [adrenf2, setAdrenf2]= React.useState("0");
-  const [gonadf, setGonadf] = React.useState("0");
-  const [gonadf2, setGonadf2]= React.useState("0");
   //Result Values
   const [pdss, setPDSS] = React.useState("0");
   const [pds_adrenal, setPDSAdrenal] = React.useState("0");
   const [pds_gonadal, setPDSGonadal] = React.useState("0");
 
   return (
+  <>
    <Flex w="100vw" minH="100vh" pt="50px" bg="gray.50" justifyContent="center">
      <VStack w="100vw" maxW = "600px" py="5px">
         <Text as="b" fontSize="18px">
@@ -282,7 +265,7 @@ const Home = () => {
           </RadioGroup>
 
 
-          <Button colorScheme="blue" onClick={() => {
+          <Button colorScheme="blue" my="20px" onClick={() => {
             if(peta * petb * petc * petd * fpete == 0){
               alert("You forgot to fill out a bubble!");
             }
@@ -381,6 +364,12 @@ const Home = () => {
       </Tabs>
      </VStack>
    </Flex>
+   <Flex w="100vw" h="100px" pt="70px" my="0px" bg="gray.50" justifyContent="center">
+      <Text color="gray.600" fontSize="12px">
+        Based on an SPSS script created by Elizabeth Shirtcliff, Ron Dahl, and Karina Quevedo
+      </Text>
+   </Flex>
+  </>
   );
 }
 
