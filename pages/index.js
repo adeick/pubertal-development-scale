@@ -365,9 +365,16 @@ const Home = () => {
      </VStack>
    </Flex>
    <Flex w="100vw" h="100px" pt="70px" my="0px" bg="gray.50" justifyContent="center">
-      <Text color="gray.600" fontSize="12px">
+      {useBreakpointValue({base: 
+      <Text color="gray.600" fontSize="12px" align="center">
+        Based on an SPSS script created by Elizabeth Shirtcliff,<br/> Ron Dahl, and Karina Quevedo
+      </Text>, 
+      md: 
+      <Text color="gray.600" fontSize="12px" align="center">
         Based on an SPSS script created by Elizabeth Shirtcliff, Ron Dahl, and Karina Quevedo
       </Text>
+    })}
+      
    </Flex>
   </>
   );
