@@ -34,8 +34,8 @@ const Home = () => {
 
   return (
   <>
-   <Flex w="100vw" minH="100vh" pt="50px" bg="gray.50" justifyContent="center">
-     <VStack w="100vw" maxW = "600px" py="5px">
+   <Flex w="100vw" minH="100vh" pt={["0px", "0px", "50px", "50px"]} bg="gray.50" justifyContent="center">
+     <VStack w="100vw" maxW = "600px" bg={["gray.50", "gray.50", "white", "white"]} py="15px" borderRadius="25px">
         <Text as="b" fontSize="18px">
           Pubertal Development Scale
         </Text>
@@ -60,7 +60,7 @@ const Home = () => {
           </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPeta} value={peta}>
             <VStack spacing="0px" px="15px" alignItems="left">
-              <Radio value="1"> has not yet begun to spurt ("spurt" means more growth than usual)</Radio>
+              <Radio value="1"><Text textAlign="left">has not yet begun to spurt ("spurt" means more growth than usual)</Text></Radio>
               <Radio value="2"> has barely started</Radio>
               <Radio value="3"> is definitely underway</Radio>
               <Radio value="4"> seems completed</Radio>
@@ -210,7 +210,7 @@ const Home = () => {
           </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPeta} value={peta}>
             <VStack spacing="0px" px="15px" alignItems="left">
-              <Radio value="1">has not yet begun to spurt ("spurt" means more growth than usual)</Radio>
+              <Radio value="1"><Text textAlign="left">has not yet begun to spurt ("spurt" means more growth than usual)</Text></Radio>
               <Radio value="2">has barely started</Radio>
               <Radio value="3">is definitely underway</Radio>
               <Radio value="4">seems completed</Radio>
