@@ -247,7 +247,178 @@ const Home = () => {
           </Box>        
           </TabPanel>
           <TabPanel>
-            {/* <p>two!</p> */}
+          {/* Female */}
+          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          1. Would you say that your growth in height:
+          </Text> 
+          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
+          1. has not yet begun to spurt ("spurt" means more growth than usual)
+          <br/> 
+          2. has barely started
+          <br/>
+          3. is definitely underway
+          <br/>
+          4. seems completed
+          </Text>
+          <RadioGroup colorScheme="blackAlpha"  onChange={setPeta} value={peta}>
+            <HStack spacing="40px">
+              <Radio value="1">1</Radio>
+              <Radio value="2">2</Radio>
+              <Radio value="3">3</Radio>
+              <Radio value="4">4</Radio>
+            </HStack>
+          </RadioGroup>
+          {/* 2. */}
+          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          2. And how about the growth of body hair "body hair" means underarm and 
+            pubic hair)? Would you say that your body hair has:
+          </Text> 
+          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
+          1. not yet started growing<br/> 
+          2. has barely started growing<br/>
+          3. is definitely underway<br/>
+          4. seems completed
+          </Text>
+          <RadioGroup colorScheme="blackAlpha"  onChange={setPetb} value={petb}>
+            <HStack spacing="40px">
+              <Radio value="1">1</Radio>
+              <Radio value="2">2</Radio>
+              <Radio value="3">3</Radio>
+              <Radio value="4">4</Radio>
+            </HStack>
+          </RadioGroup>
+          {/* 3. */}
+          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          3. Have you noticed any skin changes, especially pimples?
+          </Text> 
+          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
+          1. not yet started showing changes<br/> 
+          2. have barely started showing changes<br/>
+          3. skin changes are definitely underway<br/>
+          4. skin changes seem completed
+          </Text>
+          <RadioGroup colorScheme="blackAlpha"  onChange={setPetc} value={petc}>
+            <HStack spacing="40px">
+              <Radio value="1">1</Radio>
+              <Radio value="2">2</Radio>
+              <Radio value="3">3</Radio>
+              <Radio value="4">4</Radio>
+            </HStack>
+          </RadioGroup>
+          {/* 4. */}
+          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          4. Have your breasts begun to grow?
+          </Text> 
+          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
+          1. not yet started growing<br/>
+          2. have barely started changes<br/>
+          3. breast growth is definitely underway<br/>
+          4. breast growth seems completed
+          </Text>
+          <RadioGroup colorScheme="blackAlpha"  onChange={setPetd} value={petd}>
+            <HStack spacing="40px">
+              <Radio value="1">1</Radio>
+              <Radio value="2">2</Radio>
+              <Radio value="3">3</Radio>
+              <Radio value="4">4</Radio>
+            </HStack>
+          </RadioGroup>
+          {/* 5. */}
+          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          5. Have you begun to menstruate?
+          </Text> 
+          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
+          1. no<br/>
+          2. yes
+          </Text>
+          <RadioGroup colorScheme="blackAlpha"  onChange={setFpete} value={fpete}>
+            <HStack spacing="40px">
+              <Radio value="1">1</Radio>
+              <Radio value="2">2</Radio>
+              <Radio value="3">3</Radio>
+              <Radio value="4">4</Radio>
+            </HStack>
+          </RadioGroup>
+
+
+          <Button colorScheme="blue" onClick={() => {
+            if(peta * petb * petc * petd * fpete == 0){
+              alert("You forgot to fill out a bubble!");
+            }
+            else{
+              // Calculations
+              let petbm = (+petb > 2) ? +petb + 1 : +petb;
+              let petcm = +petc;
+                // setPetbm((+petb > 2) ? +petb + 1 : +petb); //1234 to 1245
+                // setPetcm(+petc);
+              let adrenm = petbm + petcm;
+              let adrenm2 = 0;
+                // setAdrenm(petbm + petcm); //using int
+              switch(adrenm){
+                case 2: //adrenm = 1 
+                case 3: //adrenm = 1.5
+                  adrenm2 = (petcm); //either 1 or 2
+                  break;
+                case 4: //adrenm = 2
+                  adrenm2 = (2);
+                  break;
+                case 5: //adrenm = 2.5
+                  adrenm2 = ((petbm == 4) ? 3 : 2); //=3 is petbm is 4, otherwise =2
+                  break;
+                case 6:
+                  adrenm2 = (3);
+                  break;
+                case 7:
+                case 8:
+                  adrenm2 = (4);
+                  break;
+                case 9:
+                case 10:
+                  adrenm2 = (5);
+                  break;
+                default:
+                  adrenm2 = (0);
+                  break; //default case should be impossible
+              }
+              //End adrenm, start gonadm
+              let petam = (+peta > 1) ? +peta + 1 : +peta;
+              let petdm = (+petd > 2) ? +petd + 1 : +petd;
+                // setPetam((+peta > 1) ? +peta + 1 : +peta); //1234 to 1345
+                // setPetdm((+petd > 2) ? +petd + 1 : +petd); //1234 to 1235
+              let gonadm = (petam + petdm);
+                // setGonadm(petam + petdm);
+              let gonadm2 = 0;
+              
+              if(gonadm == 2 && +mpete == 1) gonadm2 = (1);
+              if(gonadm == 2 && +mpete > 1) gonadm2 = (2);
+              if(gonadm == 3 && +mpete == 1) gonadm2 = (1);
+              if(gonadm == 3 && +mpete > 1) gonadm2 = (2);
+              if(gonadm == 4 && +mpete == 1 && petd == 1) gonadm2 = (1);
+              if(gonadm == 4 && +mpete == 1 && petd > 1) gonadm2 = (2);
+              if(gonadm == 4 && +mpete > 1) gonadm2 = (3);
+              if(gonadm == 5 && +mpete == 1) gonadm2 = (2);
+              if(gonadm == 5 && +mpete > 1) gonadm2 = (3);
+              if(gonadm == 6) gonadm2 = (3);
+              if(gonadm == 7 && +mpete == 1) gonadm2 = (4);
+              if(gonadm == 7 && +mpete == 2) gonadm2 = (4);
+              if(gonadm == 7 && +mpete > 2) gonadm2 = (5);
+              if(gonadm == 8 && +mpete == 1) gonadm2 = (4);
+              if(gonadm == 8 && +mpete == 2) gonadm2 = (4);
+              if(gonadm == 8 && +mpete > 2) gonadm2 = (5);
+              if(gonadm > 8) gonadm2 = (5);
+
+              setPDSS((adrenm2 + gonadm2) / 2);
+              setPDSAdrenal(adrenm2);
+              setPDSGonadal(gonadm2);
+            }
+          }}>
+            Calculate!
+          </Button>
+          <Box>
+            {(pdss == 0) ? "": <>{"PDSS is " + pdss}<br/></>}
+            {(pds_adrenal == 0) ? "": <>{"PDS-adrenal is " + pds_adrenal}<br/></>}
+            {(pds_gonadal == 0) ? "": <>{"PDS-gonadal is " + pds_gonadal}<br/></>}
+          </Box>    
           </TabPanel>
         </TabPanels>
       </Tabs>
