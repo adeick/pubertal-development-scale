@@ -47,6 +47,8 @@ const Home = () => {
   const [gonadf2, setGonadf2]= React.useState("0");
   //Result Values
   const [pdss, setPDSS] = React.useState("0");
+  const [pds_adrenal, setPDSAdrenal] = React.useState("0");
+  const [pds_gonadal, setPDSGonadal] = React.useState("0");
 
   return (
    <Flex w="100vw" minH="100vh" pt="100px" bg="blue.200" justifyContent="center">
@@ -232,16 +234,16 @@ const Home = () => {
               if(gonadm > 8) gonadm2 = (5);
 
               setPDSS((adrenm2 + gonadm2) / 2);
+              setPDSAdrenal(adrenm2);
+              setPDSGonadal(gonadm2);
             }
           }}>
             Calculate!
           </Button>
           <Box>
-            {(pdss == 0) ? "": "PDSS is " + pdss}
-            {/* <br/>Adrenm2 is {adrenm2}
-            <br/>Arenm is {adrenm}
-            <br/>Gonadm2 is {gonadm2}
-            <br/>Gonadm is {gonadm} */}
+            {(pdss == 0) ? "": <>{"PDSS is " + pdss}<br/></>}
+            {(pds_adrenal == 0) ? "": <>{"PDS-adrenal is " + pds_adrenal}<br/></>}
+            {(pds_gonadal == 0) ? "": <>{"PDS-gonadal is " + pds_gonadal}<br/></>}
           </Box>        
           </TabPanel>
           <TabPanel>
