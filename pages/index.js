@@ -51,8 +51,8 @@ const Home = () => {
   const [pds_gonadal, setPDSGonadal] = React.useState("0");
 
   return (
-   <Flex w="100vw" minH="100vh" pt="100px" bg="blue.200" justifyContent="center">
-     <VStack w="100vw" maxW = "600px" bg="blue.300" py="15px">
+   <Flex w="100vw" minH="100vh" pt="50px" bg="gray.50" justifyContent="center">
+     <VStack w="100vw" maxW = "600px" py="5px">
         <Text as="b" fontSize="18px">
           Pubertal Development Scale
         </Text>
@@ -72,102 +72,69 @@ const Home = () => {
         <TabPanels>
           <TabPanel>
           {/* Male */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" textAlign="left" w="100%"> 
           1. Would you say that your growth in height:
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. has not yet begun to spurt ("spurt" means more growth than usual)
-          <br/> 
-          2. has barely started
-          <br/>
-          3. is definitely underway
-          <br/>
-          4. seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPeta} value={peta}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1"> has not yet begun to spurt ("spurt" means more growth than usual)</Radio>
+              <Radio value="2"> has barely started</Radio>
+              <Radio value="3"> is definitely underway</Radio>
+              <Radio value="4"> seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 2. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
-          2. And how about the growth of body hair "body hair" means underarm and 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          2. And how about the growth of body hair ("body hair" means underarm and 
             pubic hair)? Would you say that your body hair has:
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started growing<br/> 
-          2. has barely started growing<br/>
-          3. is definitely underway<br/>
-          4. seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetb} value={petb}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started growing</Radio>
+              <Radio value="2">has barely started growing</Radio>
+              <Radio value="3">is definitely underway</Radio>
+              <Radio value="4">seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 3. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           3. Have you noticed any skin changes, especially pimples?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started showing changes<br/> 
-          2. have barely started showing changes<br/>
-          3. skin changes are definitely underway<br/>
-          4. skin changes seem completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetc} value={petc}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started showing changes</Radio>
+              <Radio value="2">have barely started showing changes</Radio>
+              <Radio value="3">skin changes are definitely underway</Radio>
+              <Radio value="4">skin changes seem completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 4. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           4. Have you noticed a deepening of your voice?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started changing<br/>
-          2. has barely started changing<br/>
-          3. voice change is definitely underway<br/>
-          4. voice change seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetd} value={petd}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started changing</Radio>
+              <Radio value="2">has barely started changing</Radio>
+              <Radio value="3">voice change is definitely underway</Radio>
+              <Radio value="4">voice change seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 5. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           5. Have you begun to grow hair on your face?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started growing hair<br/>
-          2. has barely started growing hair<br/>
-          3. facial hair growth is definitely underway<br/>
-          4. facial hair growth seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setMpete} value={mpete}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started growing hair</Radio>
+              <Radio value="2">has barely started growing hair</Radio>
+              <Radio value="3">facial hair growth is definitely underway</Radio>
+              <Radio value="4">facial hair growth seems completed</Radio>
+            </VStack>
           </RadioGroup>
 
 
-          <Button colorScheme="blue" onClick={() => {
+          <Button my="20px" colorScheme="blue" onClick={() => {
             if(peta * petb * petc * petd * mpete == 0){
               alert("You forgot to fill out a bubble!");
             }
@@ -232,10 +199,15 @@ const Home = () => {
               if(gonadm == 8 && +mpete == 2) gonadm2 = (4);
               if(gonadm == 8 && +mpete > 2) gonadm2 = (5);
               if(gonadm > 8) gonadm2 = (5);
-
+              
+              if(adrenm2 * gonadm2 != 0){                
               setPDSS((adrenm2 + gonadm2) / 2);
               setPDSAdrenal(adrenm2);
               setPDSGonadal(gonadm2);
+              }
+              else{
+                alert("Error! Code 3");
+              }
             }
           }}>
             Calculate!
@@ -246,98 +218,67 @@ const Home = () => {
             {(pds_gonadal == 0) ? "": <>{"PDS-gonadal is " + pds_gonadal}<br/></>}
           </Box>        
           </TabPanel>
+
+
           <TabPanel>
           {/* Female */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" align="left" w="100%"> 
           1. Would you say that your growth in height:
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. has not yet begun to spurt ("spurt" means more growth than usual)
-          <br/> 
-          2. has barely started
-          <br/>
-          3. is definitely underway
-          <br/>
-          4. seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPeta} value={peta}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">has not yet begun to spurt ("spurt" means more growth than usual)</Radio>
+              <Radio value="2">has barely started</Radio>
+              <Radio value="3">is definitely underway</Radio>
+              <Radio value="4">seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 2. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
-          2. And how about the growth of body hair "body hair" means underarm and 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          2. And how about the growth of body hair ("body hair" means underarm and 
             pubic hair)? Would you say that your body hair has:
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started growing<br/> 
-          2. has barely started growing<br/>
-          3. is definitely underway<br/>
-          4. seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetb} value={petb}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started growing</Radio>
+              <Radio value="2">has barely started growing</Radio>
+              <Radio value="3">is definitely underway</Radio>
+              <Radio value="4">seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 3. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           3. Have you noticed any skin changes, especially pimples?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started showing changes<br/> 
-          2. have barely started showing changes<br/>
-          3. skin changes are definitely underway<br/>
-          4. skin changes seem completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetc} value={petc}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started showing changes</Radio>
+              <Radio value="2">have barely started showing changes</Radio>
+              <Radio value="3">skin changes are definitely underway</Radio>
+              <Radio value="4">skin changes seem completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 4. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           4. Have your breasts begun to grow?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. not yet started growing<br/>
-          2. have barely started changes<br/>
-          3. breast growth is definitely underway<br/>
-          4. breast growth seems completed
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setPetd} value={petd}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1">not yet started growing</Radio>
+              <Radio value="2">have barely started changes</Radio>
+              <Radio value="3">breast growth is definitely underway</Radio>
+              <Radio value="4">breast growth seems completed</Radio>
+            </VStack>
           </RadioGroup>
           {/* 5. */}
-          <Text fontSize="16px" pt="30px" align="left" w="100%"> 
+          <Text as="b"><Text fontSize="16px" pt="30px" align="left" w="100%"> 
           5. Have you begun to menstruate?
-          </Text> 
-          <Text fontSize="16px" pl="20px" py="20px" align="left" w="100%"> 
-          1. no<br/>
-          2. yes
-          </Text>
+          </Text></Text>
           <RadioGroup colorScheme="blackAlpha"  onChange={setFpete} value={fpete}>
-            <HStack spacing="40px">
-              <Radio value="1">1</Radio>
-              <Radio value="2">2</Radio>
-              <Radio value="3">3</Radio>
-              <Radio value="4">4</Radio>
-            </HStack>
+            <VStack spacing="0px" px="15px" alignItems="left">
+              <Radio value="1"> no</Radio>
+              <Radio value="2"> yes</Radio>
+            </VStack>
           </RadioGroup>
 
 
@@ -347,69 +288,85 @@ const Home = () => {
             }
             else{
               // Calculations
-              let petbm = (+petb > 2) ? +petb + 1 : +petb;
-              let petcm = +petc;
-                // setPetbm((+petb > 2) ? +petb + 1 : +petb); //1234 to 1245
-                // setPetcm(+petc);
-              let adrenm = petbm + petcm;
-              let adrenm2 = 0;
-                // setAdrenm(petbm + petcm); //using int
-              switch(adrenm){
-                case 2: //adrenm = 1 
-                case 3: //adrenm = 1.5
-                  adrenm2 = (petcm); //either 1 or 2
-                  break;
-                case 4: //adrenm = 2
-                  adrenm2 = (2);
-                  break;
-                case 5: //adrenm = 2.5
-                  adrenm2 = ((petbm == 4) ? 3 : 2); //=3 is petbm is 4, otherwise =2
-                  break;
-                case 6:
-                  adrenm2 = (3);
-                  break;
-                case 7:
-                case 8:
-                  adrenm2 = (4);
-                  break;
-                case 9:
-                case 10:
-                  adrenm2 = (5);
-                  break;
-                default:
-                  adrenm2 = (0);
-                  break; //default case should be impossible
+              let petbf = (+petb > 2) ? +petb + 1 : +petb; //1234 to 1245
+              let petcf = (+petc > 2) ? +petc + 1 : +petc; //1234 to 1245
+               
+              let adrenf = (petbf + petcf) / 2;
+              let adrenf2 = 0;
+              if(Math.abs(adrenf - 1.5) < 0.001){ //basically if adrenf == 1.5
+                adrenf2 = +petb; //either 1 or 2
               }
-              //End adrenm, start gonadm
-              let petam = (+peta > 1) ? +peta + 1 : +peta;
-              let petdm = (+petd > 2) ? +petd + 1 : +petd;
-                // setPetam((+peta > 1) ? +peta + 1 : +peta); //1234 to 1345
-                // setPetdm((+petd > 2) ? +petd + 1 : +petd); //1234 to 1235
-              let gonadm = (petam + petdm);
-                // setGonadm(petam + petdm);
-              let gonadm2 = 0;
-              
-              if(gonadm == 2 && +mpete == 1) gonadm2 = (1);
-              if(gonadm == 2 && +mpete > 1) gonadm2 = (2);
-              if(gonadm == 3 && +mpete == 1) gonadm2 = (1);
-              if(gonadm == 3 && +mpete > 1) gonadm2 = (2);
-              if(gonadm == 4 && +mpete == 1 && petd == 1) gonadm2 = (1);
-              if(gonadm == 4 && +mpete == 1 && petd > 1) gonadm2 = (2);
-              if(gonadm == 4 && +mpete > 1) gonadm2 = (3);
-              if(gonadm == 5 && +mpete == 1) gonadm2 = (2);
-              if(gonadm == 5 && +mpete > 1) gonadm2 = (3);
-              if(gonadm == 6) gonadm2 = (3);
-              if(gonadm == 7 && +mpete == 1) gonadm2 = (4);
-              if(gonadm == 7 && +mpete == 2) gonadm2 = (4);
-              if(gonadm == 7 && +mpete > 2) gonadm2 = (5);
-              if(gonadm == 8 && +mpete == 1) gonadm2 = (4);
-              if(gonadm == 8 && +mpete == 2) gonadm2 = (4);
-              if(gonadm == 8 && +mpete > 2) gonadm2 = (5);
-              if(gonadm > 8) gonadm2 = (5);
+              else{
+                adrenf2 = Math.ceil(adrenf);
+              }
+              //End adrenf, start gonadf
+              let petaf = (+peta > 3) ? +peta + 1 : +peta; //1234 to 1235
+              let petdf = (+petd > 1) ? +petd + 1 : +petd; //1234 to 1345
+              let petef = (+fpete == 1) ? 1 : 5;
 
-              setPDSS((adrenm2 + gonadm2) / 2);
-              setPDSAdrenal(adrenm2);
-              setPDSGonadal(gonadm2);
+              let gonadf = (petaf + petdf);
+              let gonadf2 = 0;
+              if(petef == 1){
+                switch(gonadf){
+                  case 2: //gonadf is 1
+                  case 3: //gonadf is 1.5
+                    gonadf2 = 1;
+                    break;
+                  case 4: //gonadf is 2
+                  case 5: //gonadf is 2.5
+                    gonadf2 = 2;
+                    break;
+                  case 6:
+                  case 7:
+                  case 8:
+                    gonadf2 = 3;
+                    break;
+                  case 9:
+                  case 10:
+                    gonadf2 = 4;
+                    break;
+                  default: 
+                    gonadf2 = 0; //impossible
+                    break;
+                }
+              }
+              else if(petef == 5){
+               switch(gonadf){
+                  case 2: //gonadf is 1
+                    gonadf2 = 2;
+                    break;
+                  case 3: //gonadf is 1.5
+                    gonadf2 = 3;
+                    break;
+                  case 4: //gonadf is 2
+                  case 5: //gonadf is 2.5
+                  case 6:
+                    gonadf2 = 4;
+                    break;
+                  case 7:
+                  case 8:
+                  case 9:
+                  case 10:
+                    gonadf2 = 5;
+                    break;
+                  default: 
+                    gonadf2 = 0; //impossible
+                    break;
+                }
+              }
+              else{
+                //error
+                alert("Error! Code 2");
+                gonadf2 = 0;
+              }
+              if(adrenf2 * gonadf2 != 0){
+              setPDSS((adrenf2 + gonadf2) / 2);
+              setPDSAdrenal(adrenf2);
+              setPDSGonadal(gonadf2);
+              }
+              else{
+                alert("Error! Code 1")
+              }
             }
           }}>
             Calculate!
