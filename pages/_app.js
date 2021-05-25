@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
   <ChakraProvider>
     <Head>
       <title>Pubertal Development Calculator</title>
+      <meta name="google-site-verification" content="JlvY-nyZzr7q1vd3vdVSHB4kUaSZxNxo33xiTjkoF70" />
     </Head>
     <Component {...pageProps} />
   </ChakraProvider>
